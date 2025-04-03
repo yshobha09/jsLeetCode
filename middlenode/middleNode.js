@@ -1,10 +1,10 @@
 class Node {
-    constructor(value) {
+    constructor(value){
         this.value = value;
         this.next = null;
     }
 }
-
+ 
 class LinkedList {
     constructor(value) {
         const newNode = new Node(value);
@@ -41,7 +41,7 @@ class LinkedList {
         this.tail = null;
         this.length = 0;
     }
-
+ 
     push(value) {
         const newNode = new Node(value);
         if (!this.head) {
@@ -52,13 +52,13 @@ class LinkedList {
             this.tail = newNode;
         }
     }
-
-    findMiddleNode() {
-
-
+    
+    findMiddleNode(){
+    
+         
         let slow = this.head;
         let fast = this.head;
-        while (fast !== null && fast.next !== null) {
+        while(fast !== null && fast.next !== null){
             slow = slow.next;
             fast = fast.next.next;
         }
