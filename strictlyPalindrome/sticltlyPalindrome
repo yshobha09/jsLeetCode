@@ -1,0 +1,32 @@
+/**
+ * @param {number} n
+ * @return {boolean}
+ */
+
+var isStrictlyPalindromic = function (n) {
+    if (n === 0) return '0';
+
+
+    for (let base = 2; base <= n - 2; base++) {
+        let decimal = n;
+        let result = "";
+
+        while (decimal > 0) {
+            result = (decimal % base) + result;
+
+            decimal = Math.floor(decimal / base);
+
+        }
+       
+        let isPalindrome = result === result.split('').reverse().join('');
+        if (!isPalindrome) {
+            return false;
+        }
+    }
+    return true;
+
+};
+
+console.log(isStrictlyPalindromic(9));
+console.log(isStrictlyPalindromic(4));
+console.log(isStrictlyPalindromic(10));
